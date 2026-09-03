@@ -8,7 +8,7 @@ class CircularLinkedList:
     def __init__(self):
         self.head = None
 
-    # Insert at beginning
+   
     def insert_at_beginning(self, data):
         n = Node(data)
 
@@ -19,7 +19,7 @@ class CircularLinkedList:
 
         temp = self.head
 
-        # Find last node
+    
         while temp.next != self.head:
             temp = temp.next
 
@@ -27,7 +27,7 @@ class CircularLinkedList:
         temp.next = n
         self.head = n
 
-    # Insert at end
+    
     def insert_at_end(self, data):
         n = Node(data)
 
@@ -45,7 +45,6 @@ class CircularLinkedList:
         temp.next = n
         n.next = self.head
 
-    # Insert at index
     def insert_at_index(self, data, index):
         if index < 0:
             print("Invalid index")
@@ -72,52 +71,45 @@ class CircularLinkedList:
         new.next = temp.next
         temp.next = new
 
-    # Delete at beginning
+    
     def delete_at_beginning(self):
         if self.head is None:
             print("No data Available")
             return
 
-        # Only one node
         if self.head.next == self.head:
             self.head = None
             return
 
         temp = self.head
 
-        # Find last node
         while temp.next != self.head:
             temp = temp.next
 
         self.head = self.head.next
         temp.next = self.head
 
-    # Delete at end
     def delete_at_end(self):
         if self.head is None:
             print("No data Available")
             return
 
-        # Only one node
         if self.head.next == self.head:
             self.head = None
             return
 
         temp = self.head
 
-        # Find second-last node
         while temp.next.next != self.head:
             temp = temp.next
 
         temp.next = self.head
 
-    # Remove node with value
     def remove_with_value(self, target):
         if self.head is None:
             print("No data Available")
             return
 
-        # If first node contains target
         if self.head.data == target:
             self.delete_at_beginning()
             return
@@ -133,7 +125,6 @@ class CircularLinkedList:
 
         temp.next = temp.next.next
 
-    # Count nodes
     def count(self):
         if self.head is None:
             print("Number of nodes: 0")
@@ -151,7 +142,6 @@ class CircularLinkedList:
 
         print("Number of nodes:", count)
 
-    # Display circular linked list
     def display(self):
         if self.head is None:
             print("No data available")
@@ -169,11 +159,11 @@ class CircularLinkedList:
         print("(back to head)")
 
 
-# Create circular linked list
+
 l1 = CircularLinkedList()
 
 
-# Menu
+
 while True:
     print("\n========== CIRCULAR LINKED LIST MENU ==========")
     print("1. Insert at Beginning")
